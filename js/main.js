@@ -1,13 +1,19 @@
-const robotrom = document.querySelector('#robotron');
+const somar = document.querySelector('#somar');
+const subtrair = document.querySelector('#subtrair');
+const braco = document.querySelector('#braco');
 
-robotrom.addEventListener('click', (evento) => {
-  console.log(evento);
+somar.addEventListener('click', () => {
+ manipulaDados('somar');
 });
 
-function dizOi(nome) {
-  console.log(`Oi ${nome}.`);
-  console.log('Bem vindo ao Robotrom!');
+subtrair.addEventListener('click', () => {
+  manipulaDados('subtrair'); 
+});
+ 
+function manipulaDados(operacao) {
+if(operacao === 'somar'){
+  braco.value = parseInt(braco.value) + 1
+}else{
+  braco.value = parseInt(braco.value) - 1
 }
-
-dizOi('Oscar');
-
+ }
