@@ -1,21 +1,18 @@
-const somar = document.querySelector('#somar');
-const subtrair = document.querySelector('#subtrair');
-const braco = document.querySelector('#braco');
-
 const controle = document.querySelectorAll('.controle-ajuste');
-
 
 controle.forEach( (elemento) => {
   elemento.addEventListener('click', (evento) => {
-    manipulaDados(evento.target.textContent);
+    manipulaDados(evento.target.textContent, evento.target.parentNode);
   })
 })
 
-function manipulaDados(manipulado) {
+function manipulaDados(manipulado, controle) {
+  const peca = controle.querySelector('.controle-contador');
+  
   if(manipulado === '+') {
-    braco.value = parseInt(braco.value) + 1;
+    peca.value = parseInt(peca.value) + 1;
   }else{
-    braco.value = parseInt(braco.value) - 1
+    peca.value = parseInt(braco.value) - 1
   }
 }
 
@@ -39,7 +36,7 @@ function manipulaDados(manipulado) {
 
 // const somar = document.querySelector('#somar');
 // const subtrair = document.querySelector('#subtrair');
-// const braco = document.querySelector('#braco');
+// const peca = document.querySelector('#peca');
 
 // const controle = document.querySelectorAll('.controle-ajuste');
 
@@ -52,8 +49,8 @@ function manipulaDados(manipulado) {
  
 // function manipulaDados(operacao) {
 // if(operacao === '+'){
-//   braco.value = parseInt(braco.value) + 1
+//   peca.value = parseInt(peca.value) + 1
 // }else{
-//   braco.value = parseInt(braco.value) - 1
+//   peca.value = parseInt(peca.value) - 1
 // }
 //  }
